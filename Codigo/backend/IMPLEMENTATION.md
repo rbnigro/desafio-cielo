@@ -22,7 +22,8 @@ Servico backend Flash Booking em Java 21 e Spring Boot. Persistencia MySQL com J
 
 ## Execucao e validacao
 
-- Execucao integrada: `docker compose up --build` (configurar `.env` conforme `.env.example`).
+- Execucao integrada: `docker compose up --build -d`; aguardar o MySQL ficar saudavel e validar `http://127.0.0.1:8080/health` (`{"status":"UP"}`). Crie `.env` a partir de `.env.example` somente se ainda nao existir.
+- No Compose, a API conecta ao MySQL pelo nome de servico `mysql` na rede interna; a porta do banco `3306` nao e publicada no host. A API e publicada na porta `8080`; use `127.0.0.1` se `localhost` tentar IPv6.
 - Testes: `mvn test`; testes de contrato/concorrencia usam H2 e o teste MySQL Testcontainers executa quando Docker estiver disponivel.
 - O Harness independente fica em `Avaliacao/harness/run_harness.py`; sua execucao e registrada em `Avaliacao/reports/baseline.json`.
 - Se Docker nao estiver disponivel, a integracao MySQL e carga de flash sale permanecem validacoes adicionais recomendadas antes de uso produtivo.

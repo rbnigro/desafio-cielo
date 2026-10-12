@@ -12,24 +12,34 @@ Backend de reservas temporarias de ingressos para eventos de capacidade limitada
 Na pasta `Codigo/backend`:
 
 ```powershell
-Copy-Item .env.example .env
-docker compose up --build
+if (-not (Test-Path .env)) { Copy-Item .env.example .env }
+docker compose up --build -d
+docker compose ps
+Invoke-RestMethod http://127.0.0.1:8080/health
 ```
 
-A API fica disponivel em `http://localhost:8080`. O Flyway cria o schema MySQL na primeira inicializacao. Para encerrar sem apagar os dados:
+A primeira inicializacao pode levar alguns minutos enquanto as imagens e dependencias sao baixadas e a aplicacao inicia. Quando estiver pronta, o health check retorna `status: UP`. A API fica disponivel em `http://127.0.0.1:8080`; o Flyway cria o schema MySQL na primeira inicializacao.
+
+Use `127.0.0.1` em vez de `localhost` se o cliente tentar conectar por IPv6 (`::1`). O MySQL e acessivel pela API na rede interna do Compose, mas a porta `3306` nao e publicada no host. Para conferir os logs da API:
+
+```powershell
+docker compose logs -f api
+```
+
+Para encerrar sem apagar os dados:
 
 ```powershell
 docker compose down
 ```
 
-Para apagar tambem o volume local do banco, use `docker compose down --volumes`.
+Para apagar tambem o volume local do banco e todos os dados nele, use `docker compose down --volumes`.
 
 ## Executar sem containers
 
 Com um schema MySQL `flash_booking` e o usuario local `root` com permissao de DDL/DML:
 
 ```powershell
-$env:DB_URL = "jdbc:mysql://localhost:3306/flash_booking?useSSL=false&serverTimezone=UTC"
+$env:DB_URL = "jdbc:mysql://localhost:3306/flash_booking?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
 $env:DB_USERNAME = "root"
 $env:DB_PASSWORD = "root"
 mvn spring-boot:run
@@ -47,7 +57,7 @@ Os testes de contrato e concorrencia usam H2 em modo MySQL para rodar sem um ser
 
 ## API
 
-Contrato completo, exemplos JSON e codigos de erro: [`API_PAYLOADS.md`](./API_PAYLOADS.md). Com a aplicacao em execucao, explore e teste os endpoints em `http://localhost:8080/swagger-ui/index.html`; o documento OpenAPI JSON esta em `http://localhost:8080/v3/api-docs`.
+Contrato completo, exemplos JSON e codigos de erro: [`API_PAYLOADS.md`](./API_PAYLOADS.md). Com a aplicacao em execucao, explore e teste os endpoints em `http://127.0.0.1:8080/swagger-ui/index.html`; o documento OpenAPI JSON esta em `http://127.0.0.1:8080/v3/api-docs`.
 
 | Metodo | Rota | Resultado |
 | --- | --- | --- |

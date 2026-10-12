@@ -1,8 +1,8 @@
 # Contrato da API Flash Booking
 
-Base URL: `http://localhost:8080`. Corpos e respostas usam JSON e timestamps ISO-8601 UTC.
+Base URL local: `http://127.0.0.1:8080`. Corpos e respostas usam JSON e timestamps ISO-8601 UTC. Prefira `127.0.0.1` a `localhost` se o cliente tentar conectar por IPv6 (`::1`).
 
-A documentacao interativa esta em `http://localhost:8080/swagger-ui/index.html`; a especificacao OpenAPI em JSON esta em `http://localhost:8080/v3/api-docs`.
+A documentacao interativa esta em `http://127.0.0.1:8080/swagger-ui/index.html`; a especificacao OpenAPI em JSON esta em `http://127.0.0.1:8080/v3/api-docs`.
 
 ## Verificar se a API esta no ar
 
