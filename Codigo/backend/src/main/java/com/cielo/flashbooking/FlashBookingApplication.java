@@ -1,0 +1,12 @@
+package com.cielo.flashbooking;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FlashBookingApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(FlashBookingApplication.class, args);
+    }
+}

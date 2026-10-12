@@ -1,0 +1,45 @@
+Curso/Docs/IA_ASSISTIDA.m4a
+Curso/Docs/IA_ASSISTIDA.txt
+AnaliseMD.txt
+reset.txt
+.vscode/
+.idea/
+
+# Java/Maven
+target/
+*.class
+
+# Frontend and Node.js
+node_modules/
+dist/
+build/
+coverage/
+
+# Python tooling
+.venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.py[cod]
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and local tool output
+*.log
+.idea/workspace.xml
+.idea/**/workspace.xml
+Codigo/backend/.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo

@@ -1,0 +1,68 @@
+{
+  "harness": "flash-booking-acceptance",
+  "generated_at": "2026-10-08T17:12:03.409230+00:00",
+  "root": "C:\\Cielo",
+  "decision": "approved_with_remarks",
+  "counts": {
+    "pass": 7,
+    "warn": 2,
+    "fail": 0,
+    "skip": 0
+  },
+  "checks": [
+    {
+      "check_id": "00-DELIVERY-ARTIFACTS",
+      "status": "pass",
+      "detail": "README, API, architecture, data model, migration and container files found",
+      "command": null
+    },
+    {
+      "check_id": "01-API-CONTRACT",
+      "status": "pass",
+      "detail": "All five required routes documented",
+      "command": null
+    },
+    {
+      "check_id": "01-TEST-CASES",
+      "status": "pass",
+      "detail": "API, error, idempotency, cancellation, expiry and concurrency tests found",
+      "command": null
+    },
+    {
+      "check_id": "02-TECH-STACK",
+      "status": "pass",
+      "detail": "Java 21, Spring MVC/JPA and MySQL/Flyway configured",
+      "command": null
+    },
+    {
+      "check_id": "03-CONTAINER-SETUP",
+      "status": "warn",
+      "detail": "Static container files look valid; Docker Compose CLI unavailable",
+      "command": null
+    },
+    {
+      "check_id": "04-PROJECT-SCOPE",
+      "status": "pass",
+      "detail": "Backend-only Flash Booking scope; no frontend or patient CRUD sources",
+      "command": null
+    },
+    {
+      "check_id": "05-SECRET-SCAN",
+      "status": "pass",
+      "detail": "No hard-coded secret patterns found",
+      "command": null
+    },
+    {
+      "check_id": "06-BACKEND-TESTS",
+      "status": "pass",
+      "detail": "ver setup: ignoring JPA class transformer\n2026-10-08T14:11:20.633-03:00  INFO 14728 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...\n2026-10-08T14:11:22.591-03:00  INFO 14728 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:flashbooking user=SA\n2026-10-08T14:11:22.611-03:00  INFO 14728 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.\n2026-10-08T14:11:23.122-03:00  INFO 14728 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:\n\tDatabase JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']\n\tDatabase driver: undefined/unknown\n\tDatabase version: 2.3.232\n\tAutocommit mode: undefined/unknown\n\tIsolation level: undefined/unknown\n\tMinimum pool size: undefined/unknown\n\tMaximum pool size: undefined/unknown\n2026-10-08T14:11:30.152-03:00  INFO 14728 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)\n2026-10-08T14:11:30.523-03:00  INFO 14728 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'\n2026-10-08T14:11:33.555-03:00  INFO 14728 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.\n2026-10-08T14:11:45.131-03:00  INFO 14728 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''\n2026-10-08T14:11:45.135-03:00  INFO 14728 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''\n2026-10-08T14:11:45.146-03:00  INFO 14728 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms\n2026-10-08T14:11:45.393-03:00  INFO 14728 --- [           main] c.c.f.FlashBookingIntegrationTest        : Started FlashBookingIntegrationTest in 41.285 seconds (process running for 54.204)\n2026-10-08T14:11:59.758-03:00  INFO 14728 --- [           main] org.testcontainers.DockerClientFactory   : Testcontainers version: 1.21.3\n2026-10-08T14:12:01.409-03:00  INFO 14728 --- [           main] .t.d.DockerMachineClientProviderStrategy : docker-machine executable was not found on PATH ([C:\\Users\\ronne\\.jdks\\ms-21.0.12.1\\bin, C:\\Program Files (x86)\\PowerShell\\7, C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.3\\bin\\x64, C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.3\\bin, C:\\Program Files\\Microsoft SDKs\\Azure\\CLI2\\wbin, C:\\Python312\\Scripts\\, C:\\Python312\\, C:\\WINDOWS\\system32, C:\\WINDOWS, C:\\WINDOWS\\System32\\Wbem, C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\, C:\\WINDOWS\\System32\\OpenSSH\\, C:\\Program Files\\dotnet\\, C:\\Program Files\\Microsoft VS Code\\bin, C:\\ProgramData\\chocolatey\\bin, C:\\Program Files\\Git\\cmd, C:\\Program Files (x86)\\PowerShell\\7\\, C:\\Java\\Maven398\\bin, C:\\Java\\jdk-25\\bin, C:\\Program Files\\GitHub CLI\\, C:\\Python312\\poppler-24.08.0\\Library\\bin, C:\\Program Files\\Amazon\\AWSCLIV2\\, C:\\Program Files\\PuTTY\\, C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2026.2.1\\, C:\\Program Files\\nodejs\\, C:\\Program Files\\PowerShell\\7\\, C:\\Users\\ronne\\.local\\bin, C:\\Users\\ronne\\AppData\\Local\\Programs\\Python\\Python311\\Scripts\\, C:\\Users\\ronne\\AppData\\Local\\Programs\\Python\\Python311\\, C:\\Users\\ronne\\AppData\\Local\\Microsoft\\WindowsApps, C:\\Java\\jdk-25\\bin, C:\\Java\\Maven398\\bin, C:\\Users\\ronne\\.dotnet\\tools, C:\\Program Files\\Amazon\\AWSCLIV2, C:\\Users\\ronne\\AppData\\Roaming\\npm, c:\\Program Files\\Microsoft VS Code\\07f806f999\\resources\\app\\node_modules.asar.unpacked\\@vscode\\ripgrep-universal\\bin\\win32-x64])\n2026-10-08T14:12:01.413-03:00 ERROR 14728 --- [           main] o.t.d.DockerClientProviderStrategy       : Could not find a valid Docker environment. Please check configuration. Attempted configurations were:\nAs no valid configuration was found, execution cannot continue.\nSee https://java.testcontainers.org/on_failure.html for more details.\n\nMockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3\nWARNING: A Java agent has been loaded dynamically (C:\\Users\\ronne\\.m2\\repository\\net\\bytebuddy\\byte-buddy-agent\\1.17.7\\byte-buddy-agent-1.17.7.jar)\nWARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning\nWARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information\nWARNING: Dynamic loading of agents will be disallowed by default in a future release\nOpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended",
+      "command": "mvn -q test"
+    },
+    {
+      "check_id": "07-MYSQL-INTEGRATION",
+      "status": "warn",
+      "detail": "MySQL concurrency test skipped; Docker/MySQL behavior remains unverified",
+      "command": null
+    }
+  ]
+}
