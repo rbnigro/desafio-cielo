@@ -5,8 +5,6 @@ services:
       MYSQL_DATABASE: flash_booking
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
       MYSQL_ROOT_HOST: "%"
-    ports:
-      - "127.0.0.1:3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
@@ -19,7 +17,7 @@ services:
   api:
     build: .
     environment:
-      DB_URL: jdbc:mysql://mysql:3306/flash_booking?useSSL=false&serverTimezone=UTC
+      DB_URL: jdbc:mysql://mysql:3306/flash_booking?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       DB_USERNAME: ${DB_USERNAME:-root}
       DB_PASSWORD: ${DB_PASSWORD:-root}
       RESERVATION_TTL: ${RESERVATION_TTL:-PT15M}
